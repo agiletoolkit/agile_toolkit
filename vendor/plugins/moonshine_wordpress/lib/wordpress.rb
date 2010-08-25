@@ -43,13 +43,14 @@ FLUSH PRIVILEGES;
     exec 'install_wordpress',
       :command  => [
         'wget http://wordpress.org/latest.tar.gz',
+        'mkdir /srv/' + options[:directory],
         'tar xzf latest.tar.gz -C /srv/' + options[:directory] + '/'
       ].join(' && '),
       :cwd     => '/tmp',
       :require => package('wget'),
       :creates => '/srv/' + options[:directory]
 
-    file '/srv/' + options[:directory] + '/wp-config.php',
+    file '/srv/' + options[:directory] + '/wordpress/wp-config.php',
       :content => template(File.join(File.dirname(__FILE__), '..', 'templates', 'wp-config.php'), binding),
       :require => exec('install_wordpress'),
       :notify  => service('apache2')
