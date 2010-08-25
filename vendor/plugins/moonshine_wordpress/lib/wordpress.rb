@@ -11,6 +11,7 @@ module Wordpress
   #  recipe :wordpress
   def wordpress(hash = {})
     options = {
+      :directory => 'wordpress'
       :domain => `hostname`,
       :db => {
         :name       => 'wordpress',
@@ -46,9 +47,9 @@ FLUSH PRIVILEGES;
       ].join(' && '),
       :cwd     => '/tmp',
       :require => package('wget'),
-      :creates => '/srv/wordpress'
+      :creates => '/srv/'+options[:directory]
 
-    file '/srv/wordpress/wp-config.php',
+    file '/srv/' + options[:directory] + '/wp-config.php',
       :content => template(File.join(File.dirname(__FILE__), '..', 'templates', 'wp-config.php'), binding),
       :require => exec('install_wordpress'),
       :notify  => service('apache2')
