@@ -49,15 +49,13 @@ class ApplicationManifest < Moonshine::Manifest::Rails
     #   file '/etc/motd', :ensure => :file, :content => "Welcome to the TEST server!"
     # end
   end
-  # The following line includes the 'application_packages' recipe defined above
-  
   configure(
         :wordpress => {
-          :domain          => 'agiletoolkit.com',
-          :auth_key        => ':mmq+&JiiLnz3|v`#B%dGy{.JN:w.Q&);.1wkrs,*nn!cWDWvabFk_zMpXpKcT z',
-          :secure_auth_key => ')x+YL+p,&mFDtj1-,S9oc2Iw;;$A=>S3%Ho~3 :^~^K7(}{?U8[C|RGsi. EG?~z',
-          :logged_in_key   => '~}quWs+Mn7YL[pjxhb-)P,a[VvS,Lu4bMtW1`CvG,U/`D6O=PZ.d_zD 8|NQl7hz',
-          :nonce_key       => 'gkZ?}N{QT@XU59MvyJyS_E/W6$^^A-TFWV:rM|Hl)P|*9?AYoT<(0j_0kx!&]7az',
+          :domain          => 'agiledc.org',
+          :auth_key        => ':mmq+&JiiLnz3|v`#B%dGy{.JN:w.Q&);.1wkrs,*nn!cWDWvabFk_zMpXpKcT f',
+          :secure_auth_key => ')x+YL+p,&mFDtj1-,S9oc2Iw;;$A=>S3%Ho~3 :^~^K7(}{?U8[C|RGsi. EG?~@',
+          :logged_in_key   => '~}quWs+Mn7YL[pjxhb-)P,a[VvS,Lu4bMtW1`CvG,U/`D6O=PZ.d_zD 8|NQl7h{',
+          :nonce_key       => 'gkZ?}N{QT@XU59MvyJyS_E/W6$^^A-TFWV:rM|Hl)P|*9?AYoT<(0j_0kx!&]7a-',
           :db => {:password => ''}
         }
       )
