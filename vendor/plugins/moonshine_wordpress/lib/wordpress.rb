@@ -43,7 +43,7 @@ FLUSH PRIVILEGES;
     exec 'install_wordpress',
       :command  => [
         'wget http://wordpress.org/latest.tar.gz',
-        'tar xzf latest.tar.gz -C /srv'
+        'tar xzf latest.tar.gz -C /srv/' + options[:directory]
       ].join(' && '),
       :cwd     => '/tmp',
       :require => package('wget'),
