@@ -1,11 +1,11 @@
 :ruby: ree
-:application: agiletoolkit.com
+:application: rails.agiletoolkit.com
 :user: rails
 :group: rails
 :ssl:
 :self_signed: true
 :deploy_to: /srv/agile_toolkit
-:domain: agilephilanthropy.org
+:domain: agiletoolkit.com
 :repository: git@github.com:agiletoolkit/agile_toolkit.git
 :shared_children:
 - system
