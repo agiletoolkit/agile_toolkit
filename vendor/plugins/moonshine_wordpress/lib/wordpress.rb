@@ -47,7 +47,7 @@ FLUSH PRIVILEGES;
       ].join(' && '),
       :cwd     => '/tmp',
       :require => package('wget'),
-      :creates => '/srv/'+options[:directory]
+      :creates => '/srv/' + options[:directory]
 
     file '/srv/' + options[:directory] + '/wp-config.php',
       :content => template(File.join(File.dirname(__FILE__), '..', 'templates', 'wp-config.php'), binding),
