@@ -11,7 +11,7 @@ module Wordpress
   #  recipe :wordpress
   def wordpress(hash = {})
     options = {
-      :directory => 'wordpress_agiletoolkit',
+      :directory => 'wordpress',
       :domain => `hostname`,
       :db => {
         :name       => 'wordpress',
