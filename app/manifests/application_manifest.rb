@@ -51,6 +51,7 @@ class ApplicationManifest < Moonshine::Manifest::Rails
   end
   configure(
         :wordpress => {
+          :directory => 'wordpress_agiletoolkit',
           :domain          => 'agiletoolkit.com',
           :auth_key        => 'Ga--au|1$-HYu@3;S7d*}~X`1dpG|C<4Q62hiu?t*cRe$3X8DswKj%~W{S(fZVA0',
           :secure_auth_key => '`ze`VMzYe|XM(3d;gziu7A=:fDAtOGULyX n+(g.|GYj~w<MZ/Es1`$TN| ttD!q',
