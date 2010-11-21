@@ -35,6 +35,8 @@ TO #{options[:db][:username]}@localhost
 IDENTIFIED BY '#{options[:db][:password]}';
 FLUSH PRIVILEGES;
     GRANT
+    
+    
     exec 'wordpress_db_permissions',
       :command => "mysql -e \"#{grant}\"",
       :unless  => "mysqlshow -u#{options[:db][:username]} -p#{options[:db][:password]} #{options[:db][:name]}",
